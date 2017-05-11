@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 				"    -i        Input: BAM filename\n    -q        Mapping quality threshold [10]\n    -o        Output: filename\n\n";
 	string ifh; 
 	string ofh;
-	char * dum;
 	int Q=10;
 	if ( (argc==1) ||
 	     (argc==2 && string(argv[1]) == "-h") ||
