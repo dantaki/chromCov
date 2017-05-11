@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(chromCov)
+set( CMAKE_C_FLAGS "-Wall -g -O3")
+include_directories (../lib/bamtools-2.3.0/src)
+include_directories(../lib/tclap-1.2.1/include)
+add_executable(chromCov chromCov.cpp)
+TARGET_LINK_LIBRARIES(chromCov BamTools-static)
+TARGET_LINK_LIBRARIES(chromCov zlibstatic)
