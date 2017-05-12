@@ -12,7 +12,7 @@ git clone --recursive https://github.com/dantaki/chromCov.git
 #### Compile with [CMake](https://cmake.org/)
 
 ```
-cd chromCov
+cd chromCov/
 mkdir build
 cd build/
 
@@ -21,7 +21,7 @@ cmake ..
 make 
 ```
 
-#### Binary executable found under `src/chromCov`
+##### Binary executable found under `chromCov/build/src/chromCov`
 
 ## Usage 
 
