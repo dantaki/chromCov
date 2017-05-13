@@ -41,7 +41,8 @@ int main(int argc, char *argv[])
 		if(al.MapQuality < 10 || 
 			al.IsDuplicate()==true || 
 			al.IsFailedQC()==true || 
-			al.IsMapped()==false )
+			al.IsMapped()==false ||
+			!al.IsPrimaryAlignment())
 			{ continue; } 	
 		unsigned int rlen=0;
 		vector<CigarOp> cigar = al.CigarData;
