@@ -13,12 +13,9 @@ git clone --recursive https://github.com/dantaki/chromCov.git
 
 ```
 cd chromCov/
-mkdir build
-cd build/
+mkdir build && cd build/
 
-cmake .. 
-
-make 
+cmake .. && make 
 ```
 
 ##### Binary executable found under `chromCov/build/src/chromCov`
@@ -51,13 +48,12 @@ Options:
 
 ## Acknowledgements
 
-chromCov uses [BamTools](https://github.com/pezmaster31/bamtools) and [zlib](http://zlib.net/)
+chromCov uses [BamTools](https://github.com/pezmaster31/bamtools)
 
 > *BamTools*
 > Copyright (c) 2009-2010 Derek Barnett, Erik Garrison, Gabor Marth, Michael Stromberg
 
-> *zlib*
-> Copyright (C) 1995-2012 Jean-loup Gailly and Mark Adler
+Notice: BamTools requires [zlib](http://zlib.net/).
 
 ## License
 

@@ -34,23 +34,18 @@ int main(int argc, char *argv[])
 	map<int32_t, map<int,int> > COV;
 	map<int32_t, int32_t> READ;
 	BamReader reader;
-	if (!reader.Open(ifh)){
-		cerr << "ERROR: " << ifh << " could not be opened!\n\n"<< splash << endl; 
-		return 1;
-	}
+	if (!reader.Open(ifh)){ cerr << "ERROR: " << ifh << " could not be opened!\n\n"<< splash << endl; return 1; }
 	BamAlignment al;
 	const RefVector refs = reader.GetReferenceData();
 	while (reader.GetNextAlignmentCore(al)){
 		if(al.MapQuality < 10 || 
 			al.IsDuplicate()==true || 
 			al.IsFailedQC()==true || 
-			al.IsMapped()==false || 
-			al.IsPrimaryAlignment()==false) 
+			al.IsMapped()==false )
 			{ continue; } 	
 		unsigned int rlen=0;
 		vector<CigarOp> cigar = al.CigarData;
-		for(vector<CigarOp>::iterator it= cigar.begin(); it != cigar.end(); ++it)
-		{
+		for(vector<CigarOp>::iterator it= cigar.begin(); it != cigar.end(); ++it){
 			if (it->Type == 'M' || it->Type == '=' || it->Type== 'X') { rlen+=it->Length;}	
 		}
 		if(rlen!=0){ READ[al.RefID]++; COV[al.RefID][rlen]++;}

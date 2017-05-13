@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
 project(chromCov)
 set( CMAKE_C_FLAGS "-Wall -g -O3")
-add_subdirectory(lib/bamtools-2.3.0)
-add_subdirectory(lib/zlib-1.2.7)
+add_subdirectory(lib/bamtools)
 add_subdirectory(src)
