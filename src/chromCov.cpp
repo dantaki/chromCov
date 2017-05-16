@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	BamAlignment al;
 	const RefVector refs = reader.GetReferenceData();
 	while (reader.GetNextAlignmentCore(al)){
-		if(al.MapQuality < 10 || 
+		if(al.MapQuality < Q || 
 			al.IsDuplicate()==true || 
 			al.IsFailedQC()==true || 
 			al.IsMapped()==false ||
