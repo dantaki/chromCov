@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 		unsigned int rlen=0;
 		vector<CigarOp> cigar = al.CigarData;
 		for(vector<CigarOp>::iterator it= cigar.begin(); it != cigar.end(); ++it){
-			if (it->Type == 'M' || it->Type == '=' || it->Type== 'X') { rlen+=it->Length;}	
+			if (it->Type == 'M' || it->Type == 'D' || it->Type=='N' || it->Type == '=' || it->Type== 'X') { rlen+=it->Length;}	
 		}
 		if(rlen!=0){ READ[al.RefID]++; COV[al.RefID][rlen]++;}
 	}
